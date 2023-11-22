@@ -11,7 +11,7 @@ const addNoteHandler = (request, h) => {
   const updatedAt = createdAt;
 
   const newNote = {
-    title, tags, body, createdAt, updatedAt,
+   id, title, tags, body, createdAt, updatedAt,
   };
 
   notes.push(newNote);
@@ -74,7 +74,7 @@ const editNoteByIdHandler = (request, h) => {
   const updatedAt = new Date().toISOString();
 
   const index = notes.findIndex((note) => note.id === id);
-
+  
   if (index !== -1) {
     notes[index] = {
       ...notes[index],
